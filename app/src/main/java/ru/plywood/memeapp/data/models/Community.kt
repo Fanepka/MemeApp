@@ -1,8 +1,9 @@
-package ru.plywood.memeapp.data.models
+package ru.memeapp.data.models
 
-data class Like(
+data class Community(
     val id: Int,
-    val userId: Int,
-    val postId: Int,
+    val name: String,
+    val description: String,
+    val ownerId: Int,
     val createdAt: String
 )

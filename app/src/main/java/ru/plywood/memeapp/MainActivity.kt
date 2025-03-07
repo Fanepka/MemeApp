@@ -1,10 +1,9 @@
-// MainActivity.kt
 package ru.plywood.memeapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import ru.plywood.memeapp.ui.navigation.NavGraph
+import ru.memeapp.ui.navigation.NavGraph
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,4 +13,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-

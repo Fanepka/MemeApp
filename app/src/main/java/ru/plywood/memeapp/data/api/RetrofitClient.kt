@@ -1,11 +1,10 @@
-// RetrofitClient.kt
 package ru.plywood.memeapp.data.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "http://127.0.0.1:8000/"  // Замени на реальный URL
+    private const val BASE_URL = "http://192.168.88.97:8000/"
 
     val instance: ApiService by lazy {
         Retrofit.Builder()

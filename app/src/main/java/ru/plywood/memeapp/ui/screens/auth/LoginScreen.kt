@@ -1,4 +1,3 @@
-// LoginScreen.kt
 package ru.plywood.memeapp.ui.screens.auth
 
 import androidx.compose.foundation.layout.*
@@ -8,9 +7,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import ru.plywood.memeapp.ui.viewmodels.AuthViewModel
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun LoginScreen(navController: NavController, viewModel: AuthViewModel) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -33,7 +33,16 @@ fun LoginScreen(navController: NavController) {
             label = { Text("Password") }
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { /* Логика авторизации */ }) {
+        Button(onClick = {
+            viewModel.login(email, password) { tokenResponse ->
+                if (tokenResponse != null) {
+                    // Сохрани токен и перейди на главный экран
+                    navController.navigate("home")
+                } else {
+                    // Покажи ошибку
+                }
+            }
+        }) {
             Text("Login")
         }
     }
